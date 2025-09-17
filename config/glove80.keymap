@@ -27,6 +27,8 @@
 #define MAGIC 3
 #define LANGUAGE 4
 
+#define UC_DG_DE_AE &uc UC_DE_AE
+
 /* To deal with the situation where there is no Lower layer, to keep &lower happy */
 
 #ifndef LAYER_Lower
@@ -299,7 +301,7 @@
         };
 
         umlautA {
-            bindings = <&uc UC_DE_AE>;
+            bindings = <UC_DG_DE_AE>;
             key-positions = <35 25>;
             layers = <0 1>;
             timeout-ms = <50>;
