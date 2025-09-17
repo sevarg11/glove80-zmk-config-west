@@ -301,7 +301,7 @@
         };
 
         umlautA {
-            bindings = <UC_DG_DE_AE>;
+            bindings = <&kp UC_DG_DE_AE>;
             key-positions = <35 25>;
             layers = <0 1>;
             timeout-ms = <50>;
