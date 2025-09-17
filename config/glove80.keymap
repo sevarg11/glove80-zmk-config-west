@@ -4,31 +4,131 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include <dt-bindings/zmk/rgb_colors.h>
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
+#include <behaviors/unicode.dtsi>
+#include "keys_de.h"
 
 #define HYPER LC(LS(LG(LALT)))
 
+&uc {
+  default-mode = <UC_MODE_WIN_COMPOSE>;  // Replace with desired input system.
+};
+
 // layers
+
 #define DEFAULT 0
-#define LOWER 1
-#define MAGIC 2
-#define FACTORY_TEST 3
+#define HRM 1
+#define LOWER 2
+#define MAGIC 3
+#define LANGUAGE 4
+
+/* To deal with the situation where there is no Lower layer, to keep &lower happy */
+
+#ifndef LAYER_Lower
+
+#define LAYER_Lower 0
+
+#endif
+
+/* Custom Device-tree */
+/* Empty underglow layer definition (for copy-paste)
+        mylayer {
+            bindings = <
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                >;
+            layer-id = <LAYER_Name>;
+        };
+*/
+
+#define LBAT &uglowbat 0x800000 BLACK // #800000
+#define BAT1 &ug_b2 BLACK 0x804d00 // #808000
+#define BAT2 &ug_b4 BLACK 0x808000 // #804d00
+#define BAT3 &ug_b6 BLACK 0x008000 // #008000
+#define BAT4 &ug_b8 BLACK 0xafafaf // #afafaf
+#define CAPSL &ug_cl ___ TEAL
+#define NUMI  &ug_nl WHITE ORANGE
+#define NUML  &ug_nl RED YELLOW
+
+/ {
+    underglow-layer {
+        compatible = "zmk,underglow-layer";
+
+        base {
+            bindings = <
+    &ug ___ &ug ___ &ug ___  &ug ___  &ug ___                                                                &ug ___  &ug ___  &ug ___  &ug ___  &ug ___
+    &ug ___ CAPSL   CAPSL    CAPSL    CAPSL    CAPSL                                                  CAPSL  CAPSL    CAPSL    CAPSL    CAPSL    &ug ___
+    &ug ___ CAPSL   CAPSL    CAPSL    CAPSL    CAPSL                                                  CAPSL  CAPSL    CAPSL    CAPSL    &ug ___  &ug ___
+    &ug ___ CAPSL   CAPSL    CAPSL    CAPSL    CAPSL                                                  CAPSL  CAPSL    CAPSL    CAPSL    CAPSL    &ug ___
+    &ug ___ CAPSL   CAPSL    CAPSL    CAPSL    CAPSL &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ CAPSL  CAPSL    &ug ___  &ug ___  &ug ___  &ug ___
+    LBAT    &ug ___ &ug ___  &ug ___  &ug ___        &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___        &ug ___  &ug ___  &ug ___  &ug ___  LBAT
+            >;
+
+            layer-id = <DEFAULT>;
+        };
+
+        hrm {
+            bindings = <
+                &ug BLUE &ug ___ &ug ___ &ug ___ &ug ___                                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                >;
+            layer-id = <HRM>;
+        };
+
+        lower {
+            bindings = <
+    &ug ___    &ug ___  &ug ___    &ug ___    &ug ___                                                                                 &ug ___  &ug ___     &ug ___    &ug ___     &ug ___
+    &ug PURPLE &ug PINK &ug PINK   &ug   PINK &ug   PINK &ug PINK                                                             &ug ___ NUMI     &ug ORANGE  &ug ORANGE &ug ORANGE  &ug RED
+    &ug PURPLE &ug ___  &ug ___    &ug ORANGE &ug ___    &ug ___                                                              &ug ___ NUML     NUML        NUML       &ug ORANGE  &ug ___
+    &ug PURPLE &ug ___  &ug ORANGE &ug    RED &ug ORANGE &ug ___                                                              &ug ___ NUML     NUML        NUML       &ug ORANGE  &ug ___
+    &ug   BLUE &ug ___  &ug RED    &ug    RED &ug    RED &ug ___  &ug_cl BLUE TEAL &ug ___   &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ NUML     NUML        NUML       &ug    RED  &ug BLUE
+    &ug ___    &ug ___  &ug ORANGE &ug ORANGE &ug ORANGE          &ug ___          &ug GREEN &ug ___  &ug ___ &ug ___ &ug ___         NUML     NUML        &ug ORANGE &ug    RED  &ug ___
+            >;
+
+            layer-id = <LOWER>;
+        };
+
+        languageLayer {
+            bindings = <
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug RED &ug ___ &ug RED &ug ___ &ug ___
+                &ug ___ &ug RED &ug RED &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            >;
+
+            layer-id = <LANGUAGE>;
+        };
+    };
+};
+
+&sk { quick-release; };
 
 / {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
         // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
+
         layer_td: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             label = "LAYER_TAP_DANCE";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&mo LOWER>, <&to LOWER>;
+            tapping-term-ms = <350>;
+            bindings = <&mo 2>, <&to 2>;
         };
 
         magic: magic_hold_tap {
@@ -39,6 +139,87 @@
             tapping-term-ms = <200>;
             bindings = <&mo>, <&rgb_ug_status_macro>;
         };
+
+        DoubleTapShift: DoubleTapShift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "DOUBLETAPSHIFT";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_SHIFT>, <&caps_word>, <&kt CAPSLOCK>;
+
+            tapping-term-ms = <500>;
+        };
+
+        SpaceBarTapDance: SpaceBarTapDance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "SPACEBARTAPDANCE";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&double_space_period>;
+        };
+
+        ShiftHold: ShiftHold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SHIFTHOLD";
+            bindings = <&shiftPressKey>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            flavor = "balanced";
+        };
+
+        uglowbat: uglowbat {
+            compatible = "zmk,behavior-underglow-battery";
+            threshold = <30>;
+            #binding-cells = <2>;
+        };
+
+        layerHoldTap: layerHoldTap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYERHOLDTAP";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        HRM_Left: HRM_Left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <58 40 28 16 17 29 5 6 7 8 9 17 18 19 20 21 29 30 31 32 33 41 42 43 44 45 59 60 61 62 63 75 76 77 55 56 72 73 74 78 79 57>;
+        };
+
+        HRM_Right: HRM_Right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM_RIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <150>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 15 22 23 24 25 26 27 34 35 36 37 38 39 46 47 48 49 50 51 52 53 54 64 65 66 67 68 69 70 71>;
+        };
+
+        mm_DelLanguageLayer: mm_DelLanguageLayer {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DELLANGUAGELAYER";
+            bindings = <&kp BACKSPACE>, <&sl 4>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_RSFT|MOD_RALT)>;
+            keep-mods = <(MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -46,46 +227,177 @@
             label = "RGB_UG_STATUS";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&rgb_ug RGB_STATUS>;
+            bindings = <&rgb_ug RGB_STATUS>;
         };
 
         bt_0: bt_profile_macro_0 {
             label = "BT_0";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 0>;
+            bindings = <&out OUT_BLE &bt BT_SEL 0>;
         };
 
         bt_1: bt_profile_macro_1 {
             label = "BT_1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 1>;
+            bindings = <&out OUT_BLE &bt BT_SEL 1>;
         };
 
         bt_2: bt_profile_macro_2 {
             label = "BT_2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 2>;
+            bindings = <&out OUT_BLE &bt BT_SEL 2>;
         };
 
         bt_3: bt_profile_macro_3 {
             label = "BT_3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 3>;
+            bindings = <&out OUT_BLE &bt BT_SEL 3>;
+        };
+
+        double_space_period: double_space_period {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp SPACE &sk LSHIFT>;
+            label = "DOUBLE_SPACE_PERIOD";
+        };
+
+        shiftPressKey: shiftPressKey {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings = <&macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            label = "SHIFTPRESSKEY";
         };
     };
+
+    combos {
+        compatible = "zmk,combos";
+
+        CapLock {
+            bindings = <&kt CAPSLOCK>;
+            key-positions = <52 57>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        f11_Alt {
+            bindings = <&kp F11>;
+            key-positions = <8 20>;
+            layers = <0>;
+            timeout-ms = <50>;
+        };
+
+        f12_Alt {
+            bindings = <&kp F12>;
+            key-positions = <9 21>;
+            timeout-ms = <50>;
+            layers = <0>;
+        };
+
+        umlautA {
+            bindings = <&uc UC_DE_AE>;
+            key-positions = <35 25>;
+            layers = <0 1>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <50>;
+        };
+
+        umlautU {
+            bindings = <&uc UC_DE_UE>;
+            key-positions = <29 25>;
+        };
+
+        umlautO {
+            bindings = <&uc UC_DE_OE>;
+            key-positions = <31 25>;
+        };
+    };
+
+    /* #define for key positions */
+
+    #define POS_LH_T1 52
+#define POS_LH_T2 53
+#define POS_LH_T3 54
+#define POS_LH_T4 69
+#define POS_LH_T5 70
+#define POS_LH_T6 71
+#define POS_LH_C1R2 15
+#define POS_LH_C1R3 27
+#define POS_LH_C1R4 39
+#define POS_LH_C1R5 51
+#define POS_LH_C2R1 4
+#define POS_LH_C2R2 14
+#define POS_LH_C2R3 26
+#define POS_LH_C2R4 38
+#define POS_LH_C2R5 50
+#define POS_LH_C2R6 68
+#define POS_LH_C3R1 3
+#define POS_LH_C3R2 13
+#define POS_LH_C3R3 25
+#define POS_LH_C3R4 37
+#define POS_LH_C3R5 49
+#define POS_LH_C3R6 67
+#define POS_LH_C4R1 2
+#define POS_LH_C4R2 12
+#define POS_LH_C4R3 24
+#define POS_LH_C4R4 36
+#define POS_LH_C4R5 48
+#define POS_LH_C4R6 66
+#define POS_LH_C5R1 1
+#define POS_LH_C5R2 11
+#define POS_LH_C5R3 23
+#define POS_LH_C5R4 35
+#define POS_LH_C5R5 47
+#define POS_LH_C5R6 65
+#define POS_LH_C6R1 0
+#define POS_LH_C6R2 10
+#define POS_LH_C6R3 22
+#define POS_LH_C6R4 34
+#define POS_LH_C6R5 46
+#define POS_LH_C6R6 64
+#define POS_RH_T1 57
+#define POS_RH_T2 56
+#define POS_RH_T3 55
+#define POS_RH_T4 74
+#define POS_RH_T5 73
+#define POS_RH_T6 72
+#define POS_RH_C1R2 16
+#define POS_RH_C1R3 28
+#define POS_RH_C1R4 40
+#define POS_RH_C1R5 58
+#define POS_RH_C2R1 5
+#define POS_RH_C2R2 17
+#define POS_RH_C2R3 29
+#define POS_RH_C2R4 41
+#define POS_RH_C2R5 59
+#define POS_RH_C2R6 75
+#define POS_RH_C3R1 6
+#define POS_RH_C3R2 18
+#define POS_RH_C3R3 30
+#define POS_RH_C3R4 42
+#define POS_RH_C3R5 60
+#define POS_RH_C3R6 76
+#define POS_RH_C4R1 7
+#define POS_RH_C4R2 19
+#define POS_RH_C4R3 31
+#define POS_RH_C4R4 43
+#define POS_RH_C4R5 61
+#define POS_RH_C4R6 77
+#define POS_RH_C5R1 8
+#define POS_RH_C5R2 20
+#define POS_RH_C5R3 32
+#define POS_RH_C5R4 44
+#define POS_RH_C5R5 62
+#define POS_RH_C5R6 78
+#define POS_RH_C6R1 9
+#define POS_RH_C6R2 21
+#define POS_RH_C6R3 33
+#define POS_RH_C6R4 45
+#define POS_RH_C6R5 63
+#define POS_RH_C6R6 79
 
     keymap {
         compatible = "zmk,keymap";
@@ -100,45 +412,56 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-            &kp F1         &kp F2   &kp F3      &kp F4      &kp F5                                                                                         &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
-            &kp EQUAL      &kp N1   &kp N2      &kp N3      &kp N4      &kp N5                                                                     &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS
-            &kp TAB        &kp Q    &kp W       &kp E       &kp R       &kp T                                                                      &kp Y   &kp U   &kp I       &kp O       &kp P       &kp BSLH
-            &kp ESC        &kp A    &kp S       &kp D       &kp F       &kp G                                                                      &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
-            &kp GRAVE      &kp Z    &kp X       &kp C       &kp V       &kp B   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &kp RSHFT   &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
-            &magic MAGIC 0 &kp HOME &kp END     &kp LEFT    &kp RIGHT           &kp BSPC    &kp DEL     &kp LALT   &kp RALT  &kp RET   &kp SPACE           &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &kp PG_DN
+&kp F1                      &kp F2                &kp F3                &kp F4                &kp F5                                                                                                                                                 &kp F6                &kp F7                      &kp F8                    &kp F9                    &kp F10
+&kp ESC                     &ShiftHold LS(N1) N1  &ShiftHold LS(N2) N2  &ShiftHold LS(N3) N3  &ShiftHold LS(N4) N4  &ShiftHold LS(N5) N5                                                                                       &ShiftHold LS(N6) N6  &ShiftHold LS(N7) N7  &ShiftHold LS(N8) N8        &ShiftHold LS(N9) N9      &ShiftHold LS(N0) N0      &kp BACKSLASH
+&kp TAB                     &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                                                                                                      &kp Y                 &kp U                 &kp I                       &kp O                     &kp P                     &ShiftHold LS(MINUS) MINUS
+&ShiftHold LS(EQUAL) EQUAL  &kp A                 &kp S                 &kp D                 &kp F                 &kp G                                                                                                      &kp H                 &kp J                 &kp K                       &kp L                     &ShiftHold LS(SEMI) SEMI  &ShiftHold LS(SQT) SQT
+&kp GRAVE                   &ShiftHold LC(Z) Z    &ShiftHold LC(X) X    &ShiftHold LC(C) C    &ShiftHold LC(V) V    &kp B                 &DoubleTapShift       &sk LCTRL  &layer_td  &kp LGUI  &sk RCTRL   &sk RSHFT          &kp N                 &kp M                 &ShiftHold LS(COMMA) COMMA  &ShiftHold LS(DOT) DOT    &ShiftHold LS(FSLH) FSLH  &kp PG_UP
+&magic 3 0                  &kp HOME              &kp END               &kp LEFT              &kp RIGHT                                   &mm_DelLanguageLayer  &kp DEL    &sk LALT   &sk RALT  &kp RETURN  &SpaceBarTapDance                        &kp UP                &kp DOWN                    &ShiftHold LS(LBKT) LBKT  &ShiftHold LS(RBKT) RBKT  &kp PG_DN
+            >;
+        };
+
+        HomeRowMods {
+            bindings = <
+&trans  &trans  &trans            &trans             &trans                                                                                  &trans               &trans              &trans                  &trans  &trans
+&trans  &trans  &trans            &trans             &trans                  &trans                                                  &trans  &trans               &trans              &trans                  &trans  &trans
+&trans  &trans  &trans            &trans             &trans                  &trans                                                  &trans  &trans               &trans              &trans                  &trans  &trans
+&trans  &trans  &HRM_Left LALT S  &HRM_Left LCTRL D  &HRM_Left LEFT_SHIFT F  &trans                                                  &trans  &HRM_Right RSHIFT J  &HRM_Right RCTRL K  &HRM_Right RIGHT_ALT L  &trans  &trans
+&trans  &trans  &trans            &trans             &trans                  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans               &trans              &trans                  &trans  &trans
+&trans  &trans  &trans            &trans             &trans                          &trans  &trans  &trans  &trans  &trans  &trans          &trans               &trans              &trans                  &trans  &trans
             >;
         };
 
         lower_layer {
             bindings = <
-            &kp C_BRI_DN      &kp C_BRI_UP        &kp C_PREV      &kp C_NEXT      &kp C_PP                                                                                                           &kp C_MUTE   &kp C_VOL_DN &kp C_VOL_UP  &none           &kp PAUSE_BREAK
-            &trans            &none               &none           &none           &none           &kp HOME                                                                              &kp LPAR     &kp KP_NUM   &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY &kp PSCRN
-            &trans            &none               &none           &kp UP          &none           &kp END                                                                               &kp RPAR     &kp KP_N7    &kp KP_N8    &kp KP_N9     &kp KP_MINUS    &kp SLCK
-            &trans            &none               &kp LEFT        &kp DOWN        &kp RIGHT       &kp PG_UP                                                                             &kp PRCNT    &kp KP_N4    &kp KP_N5    &kp KP_N6     &kp KP_PLUS     &none
-            &trans            &kp K_CMENU         &none           &kp F11         &kp F12         &kp PG_DN       &trans      &trans      &to DEFAULT &trans      &trans      &trans    &kp COMMA    &kp KP_N1    &kp KP_N2    &kp KP_N3     &kp KP_ENTER    &trans
-            &trans            &kp CAPS            &kp INS         &kp F11         &kp F12                         &trans      &trans      &trans      &trans      &trans      &trans                 &kp KP_N0    &kp KP_N0    &kp KP_DOT    &kp KP_ENTER    &trans
+&kp C_BRI_DN  &kp C_BRI_UP  &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                         &kp C_MUTE  &kp C_VOL_DN  &kp C_VOL_UP   &none            &kp PAUSE_BREAK
+&trans        &none         &none       &none       &none      &kp HOME                                                   &kp LPAR   &kp KP_NUM  &kp KP_EQUAL  &kp KP_DIVIDE  &kp KP_MULTIPLY  &kp PSCRN
+&trans        &none         &none       &kp UP      &none      &kp END                                                    &kp RPAR   &kp KP_N7   &kp KP_N8     &kp KP_N9      &kp KP_MINUS     &kp SLCK
+&trans        &none         &kp LEFT    &kp DOWN    &kp RIGHT  &kp PG_UP                                                  &kp PRCNT  &kp KP_N4   &kp KP_N5     &kp KP_N6      &kp KP_PLUS      &none
+&trans        &kp K_CMENU   &none       &kp F11     &kp F12    &kp PG_DN  &trans  &trans  &to 0   &trans  &trans  &trans  &kp COMMA  &kp KP_N1   &kp KP_N2     &kp KP_N3      &kp KP_ENTER     &trans
+&trans        &kp CAPS      &kp INS     &kp F11     &kp F12               &trans  &trans  &trans  &trans  &trans  &trans             &kp KP_N0   &kp KP_N0     &kp KP_DOT     &kp KP_ENTER     &trans
             >;
         };
 
         magic_layer {
             bindings = <
-            &bt BT_CLR        &none               &none           &none           &none                                                                                                           &none      &none      &none      &none      &bt BT_CLR_ALL
-            &none             &none               &none           &none           &none           &none                                                                                &none      &none      &none      &none      &none      &none
-            &none             &rgb_ug RGB_SPI     &rgb_ug RGB_SAI &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_TOG                                                                      &none      &none      &none      &none      &none      &none
-            &bootloader       &rgb_ug RGB_SPD     &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF                                                                      &none      &none      &none      &none      &none      &bootloader
-            &sys_reset        &none               &none           &none           &none           &none           &bt_2     &bt_3     &none            &none     &none     &none       &none      &none      &none      &none      &none      &sys_reset
-            &none             &none               &none           &none           &none                           &bt_0     &bt_1     &out OUT_USB     &none     &none     &none                  &none      &none      &none      &none      &to FACTORY_TEST
+&bt BT_CLR   &kt CAPSLOCK     &kt SCROLLLOCK   &tog 1           &none                                                                                     &none  &none  &none  &none  &bt BT_CLR_ALL
+&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
+&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
+&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
+&sys_reset   &none            &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
+&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
             >;
         };
 
-        factory_test_layer {
+        Language_Layer {
             bindings = <
-            &kp N0   &kp N6   &kp N2   &kp N8   &kp N4                                                                              &kp N4   &kp N8   &kp N2   &kp N6   &kp N0
-            &kp N1   &kp N7   &kp N3   &kp N9   &kp N5   &kp N0                                                            &kp N0   &kp N5   &kp N9   &kp N3   &kp N7   &kp N1
-            &kp N2   &kp N8   &kp N4   &kp N0   &kp N6   &kp N1                                                            &kp N1   &kp N6   &kp N0   &kp N4   &kp N8   &kp N2
-            &kp N3   &kp N9   &kp N5   &kp N1   &kp N7   &kp N2                                                            &kp N2   &kp N7   &kp N1   &kp N5   &kp N9   &kp N3
-            &kp N4   &kp N0   &kp N6   &kp N2   &kp N8   &kp N3   &kp N4   &kp N5   &kp N6      &kp N6   &kp N5   &kp N4   &kp N3   &kp N8   &kp N2   &kp N6   &kp N0   &kp N4
-            &kp N5   &kp N1   &kp N7   &kp N3   &kp N9            &kp N7   &kp N8   &kp N9      &kp N9   &kp N8   &kp N7            &kp N9   &kp N3   &kp N7   &kp N1   &kp N5
+&trans  &trans                                  &trans     &trans  &trans                                                                  &trans                                  &trans  &trans                                  &trans  &trans
+&trans  &trans                                  &trans     &trans  &trans  &trans                                                  &trans  &trans                                  &trans  &trans                                  &trans  &trans
+&trans  &trans                                  &trans     &trans  &trans  &trans                                                  &trans  &ShiftHold LS(DE_U_UMLAUT) DE_U_UMLAUT  &trans  &ShiftHold LS(DE_O_UMLAUT) DE_O_UMLAUT  &trans  &trans
+&trans  &ShiftHold LS(DE_A_UMLAUT) DE_A_UMLAUT  &kp DE_SZ  &trans  &trans  &trans                                                  &trans  &trans                                  &trans  &trans                                  &trans  &trans
+&trans  &trans                                  &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans                                  &trans  &trans
+&trans  &trans                                  &trans     &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans                                  &trans  &trans                                  &trans  &trans
             >;
         };
     };

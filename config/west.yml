@@ -1,11 +1,19 @@
 manifest:
   remotes:
-    - name: moergo-sc
-      url-base: https://github.com/moergo-sc
+    - name: zmkfirmware
+      url-base: https://github.com/sevarg11
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
-      remote: moergo-sc
-      revision: main
+      remote: zmkfirmware
+      revision: v0.3
       import: app/west.yml
+    - name: zmk-leader-key
+      remote: urob
+      revision: v0.3 # set to same as ZMK version above
+    - name: zmk-unicode
+      remote: urob
+      revision: v0.3 # set to same as ZMK version above
   self:
     path: config
