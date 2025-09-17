@@ -8,6 +8,7 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+      revision: rgb-layer-25.08
     - name: zmk-leader-key
       remote: urob
       revision: v0.3 # set to same as ZMK version above
