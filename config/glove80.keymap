@@ -471,12 +471,12 @@
 
         Language_Layer {
             bindings = <
-&trans  &trans         &trans     &trans  &trans                                  &trans        &trans  &trans        &trans  &trans
-&trans  &trans         &trans     &trans  &trans  &trans                  &trans  &trans        &trans  &trans        &trans  &trans
-&trans  &trans         &trans     &trans  &trans  &trans                  &trans  &uc UC_DE_UE  &trans  &uc UC_DE_OE  &trans  &trans
-&trans  &uc UC_DE_AE   &uc UC_DE_SS  &trans  &trans  &trans               &trans  &trans        &trans  &trans        &trans  &trans
-&trans  &trans         &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans
-&trans  &trans         &trans     &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans                                  &trans  &trans
+&trans  &trans         &trans        &trans  &trans                                                                  &trans        &trans  &trans        &trans  &trans
+&trans  &trans         &trans        &trans  &trans  &trans                                                  &trans  &trans        &trans  &trans        &trans  &trans
+&trans  &trans         &trans        &trans  &trans  &trans                                                  &trans  &uc UC_DE_UE  &trans  &uc UC_DE_OE  &trans  &trans
+&trans  &uc UC_DE_AE   &uc UC_DE_SS  &trans  &trans  &trans                                                  &trans  &trans        &trans  &trans        &trans  &trans
+&trans  &trans         &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans        &trans  &trans
+&trans  &trans         &trans        &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans  &trans        &trans  &trans
             >;
         };
     };
