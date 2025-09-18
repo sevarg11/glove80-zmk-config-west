@@ -274,8 +274,6 @@
         };
     };
 
-    #define DE_AE &uc UC_DE_AE
-
     combos {
         compatible = "zmk,combos";
 
