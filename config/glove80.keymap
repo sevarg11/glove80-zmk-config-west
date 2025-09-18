@@ -328,7 +328,7 @@
             layers = <0 1>;
             timeout-ms = <50>;
             require-prior-idle-ms = <50>;
-        }
+        };
     };
 
     /* #define for key positions */
