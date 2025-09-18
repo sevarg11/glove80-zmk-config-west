@@ -274,6 +274,8 @@
         };
     };
 
+    #define DE_AE &uc UC_DE_AE
+
     combos {
         compatible = "zmk,combos";
 
@@ -321,6 +323,14 @@
             timeout-ms = <50>;
             require-prior-idle-ms = <50>;
         };
+
+        schluss {
+            bindings = <&uc UC_DE_SS>;
+            key-positions = <36 25>;
+            layers = <0 1>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <50>;
+        }
     };
 
     /* #define for key positions */
@@ -463,12 +473,12 @@
 
         Language_Layer {
             bindings = <
-&trans  &trans                                  &trans     &trans  &trans                                                                  &trans                                  &trans  &trans                                  &trans  &trans
-&trans  &trans                                  &trans     &trans  &trans  &trans                                                  &trans  &trans                                  &trans  &trans                                  &trans  &trans
-&trans  &trans                                  &trans     &trans  &trans  &trans                                                  &trans  &ShiftHold LS(DE_U_UMLAUT) DE_U_UMLAUT  &trans  &ShiftHold LS(DE_O_UMLAUT) DE_O_UMLAUT  &trans  &trans
-&trans  &ShiftHold LS(DE_A_UMLAUT) DE_A_UMLAUT  &kp DE_SZ  &trans  &trans  &trans                                                  &trans  &trans                                  &trans  &trans                                  &trans  &trans
-&trans  &trans                                  &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans                                  &trans  &trans
-&trans  &trans                                  &trans     &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans                                  &trans  &trans                                  &trans  &trans
+&trans  &trans         &trans     &trans  &trans                                  &trans        &trans  &trans        &trans  &trans
+&trans  &trans         &trans     &trans  &trans  &trans                  &trans  &trans        &trans  &trans        &trans  &trans
+&trans  &trans         &trans     &trans  &trans  &trans                  &trans  &uc UC_DE_UE  &trans  &uc UC_DE_OE  &trans  &trans
+&trans  &uc UC_DE_AE   &uc UC_DE_SS  &trans  &trans  &trans               &trans  &trans        &trans  &trans        &trans  &trans
+&trans  &trans         &trans     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                  &trans  &trans
+&trans  &trans         &trans     &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans                                  &trans  &trans
             >;
         };
     };
