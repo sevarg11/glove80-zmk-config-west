@@ -227,6 +227,51 @@
             hold-trigger-key-positions = <25>;
             retro-tap;
         };
+
+        umlautUht: umlautUht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "UMLAUTUHT";
+            bindings = <&umlautU_macro>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <50>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <25>;
+            retro-tap;
+        };
+
+        umlautOht: umlautOht {
+            compatible = "zmk,behavior-hold-tap";
+            label = "UMLAUTOHT";
+            bindings = <&umlautO_macro>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <50>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <25>;
+            retro-tap;
+        };
+
+        eszettHT: eszettHT {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ESZETTHT";
+            bindings = <&de_eszett_macro>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
+            require-prior-idle-ms = <50>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <25>;
+            retro-tap;
+        };
     };
 
     macros {
@@ -280,25 +325,28 @@
         };
 
         umlautA_macro: umlautA_macro {
-             compatible = "zmk,behavior-macro";
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&uc UC_DE_AE>;
             label = "UMLAUTAMACRO";
         };
-umlautU_macro: umlautU_macro {
-             compatible = "zmk,behavior-macro";
+
+        umlautU_macro: umlautU_macro {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&uc UC_DE_UE>;
             label = "UMLAUTUMACRO";
         };
-umlautO_macro: umlautO_macro {
-             compatible = "zmk,behavior-macro";
+
+        umlautO_macro: umlautO_macro {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&uc UC_DE_OE>;
             label = "UMLAUTOMACRO";
         };
-de_eszett_macro: de_eszett_macro {
-             compatible = "zmk,behavior-macro";
+
+        de_eszett_macro: de_eszett_macro {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&uc UC_DE_SS>;
             label = "ESZETTMACRO";
@@ -499,12 +547,12 @@ de_eszett_macro: de_eszett_macro {
 
         Language_Layer {
             bindings = <
-&trans  &trans                 &trans  &trans  &trans                                                                  &trans                 &trans  &trans                 &trans  &trans
-&trans  &trans                 &trans  &trans  &trans  &trans                                                  &trans  &trans                 &trans  &trans                 &trans  &trans
-&trans  &trans                 &trans  &trans  &trans  &trans                                                  &trans  &trans                 &trans  &trans                 &trans  &trans
-&trans  &trans                 &trans  &trans  &trans  &trans                                                  &trans  &trans                 &trans  &trans                 &trans  &trans
-&trans  &trans                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans                 &trans  &trans
-&trans  &trans                 &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans                 &trans  &trans                 &trans  &trans
+&trans  &trans          &trans         &trans  &trans                                                                  &trans          &trans  &trans          &trans  &trans
+&trans  &trans          &trans         &trans  &trans  &trans                                                  &trans  &trans          &trans  &trans          &trans  &trans
+&trans  &trans          &trans         &trans  &trans  &trans                                                  &trans  &umlautUht 0 U  &trans  &umlautOht 0 O  &trans  &trans
+&trans  &umlautAht 0 A  &eszettHT 0 S  &trans  &trans  &trans                                                  &trans  &trans          &trans  &trans          &trans  &trans
+&trans  &trans          &trans         &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans          &trans  &trans
+&trans  &trans          &trans         &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans          &trans  &trans          &trans  &trans
             >;
         };
     };
