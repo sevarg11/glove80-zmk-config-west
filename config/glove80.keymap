@@ -215,7 +215,7 @@
         umlautAht: umlautAht {
             compatible = "zmk,behavior-hold-tap";
             label = "UMLAUTAHT";
-            bindings = <&kp>, <&kp>;
+            bindings = <&uc>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
@@ -475,8 +475,8 @@
             bindings = <
 &trans  &trans                       &trans  &trans  &trans                                                                  &trans                    &trans  &trans                    &trans  &trans
 &trans  &trans                       &trans  &trans  &trans  &trans                                                  &trans  &trans                    &trans  &trans                    &trans  &trans
-&trans  &trans                       &trans  &trans  &trans  &trans                                                  &trans  &umlautAht DE_U_UMLAUT U  &trans  &umlautAht DE_O_UMLAUT O  &trans  &trans
-&trans  &umlautAht DE_A_UMLAUT DE_A  &trans  &trans  &trans  &trans                                                  &trans  &trans                    &trans  &trans                    &trans  &trans
+&trans  &trans                       &trans  &trans  &trans  &trans                                                  &trans  &umlautAht UC_DE_UE U  &trans  &umlautAht UC_DE_OE O  &trans  &trans
+&trans  &umlautAht UC_DE_AE A  &trans  &trans  &trans  &trans                                                  &trans  &trans                    &trans  &trans                    &trans  &trans
 &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans                    &trans  &trans
 &trans  &trans                       &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans                    &trans  &trans                    &trans  &trans
             >;
