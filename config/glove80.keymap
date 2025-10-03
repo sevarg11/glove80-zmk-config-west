@@ -476,7 +476,7 @@
             bindings = <
 &trans  &trans                 &trans  &trans  &trans                                                                  &trans                 &trans  &trans                 &trans  &trans
 &trans  &trans                 &trans  &trans  &trans  &trans                                                  &trans  &trans                 &trans  &trans                 &trans  &trans
-&trans  &trans                 &trans  &trans  &trans  &trans                                                  &trans  &umlautAht UC_DE_UE U  &trans  &umlautAht UC_DE_OE O  &trans  &trans
+&trans  &trans                 &trans  &trans  &trans  &trans                                                  &trans  &trans                 &trans  &umlautAht UC_DE_OE O  &trans  &trans
 &trans  &trans                 &trans  &trans  &trans  &trans                                                  &trans  &trans                 &trans  &trans                 &trans  &trans
 &trans  &trans                 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                 &trans  &trans                 &trans  &trans
 &trans  &trans                 &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans                 &trans  &trans                 &trans  &trans
