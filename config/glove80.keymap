@@ -476,8 +476,8 @@
             bindings = <
 &trans  &trans                       &trans  &trans  &trans                                                                  &trans                    &trans  &trans                    &trans  &trans
 &trans  &trans                       &trans  &trans  &trans  &trans                                                  &trans  &trans                    &trans  &trans                    &trans  &trans
-&trans  &trans                       &trans  &trans  &trans  &trans                                                  &trans  &umlautAht UC_DE_UE U  &trans  &umlautAht UC_DE_OE O  &trans  &trans
-&trans  &umlautAht UC_DE_AE A  &trans  &trans  &trans  &trans                                                  &trans  &trans                    &trans  &trans                    &trans  &trans
+&trans  &trans                       &trans  &trans  &trans  &trans                                                  &trans  &umlautAht UC_DE_UE U     &trans  &umlautAht UC_DE_OE O     &trans  &trans
+&trans  &umlautAht UC_DE_AE A        &trans  &trans  &trans  &trans                                                  &trans  &trans                    &trans  &trans                    &trans  &trans
 &trans  &trans                       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans                    &trans  &trans
 &trans  &trans                       &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans                    &trans  &trans                    &trans  &trans
             >;
