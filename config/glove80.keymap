@@ -297,21 +297,21 @@
         };
 
         umlautU {
-            bindings = <&none>;
+            bindings = <&uc UC_DE_UE>;
             key-positions = <29 25>;
             timeout-ms = <150>;
             layers = <4>;
         };
 
         umlautO {
-            bindings = <&none>;
+            bindings = <&uc UC_DE_OE>;
             key-positions = <25 31>;
             timeout-ms = <150>;
             layers = <4>;
         };
 
         schluss {
-            bindings = <&none>;
+            bindings = <&uc UC_DE_SS>;
             key-positions = <36 71>;
             timeout-ms = <150>;
             layers = <4>;
@@ -460,8 +460,8 @@
             bindings = <
 &trans  &trans        &trans        &trans  &trans                                                                  &trans        &trans  &trans        &trans  &trans
 &trans  &trans        &trans        &trans  &trans  &trans                                                  &trans  &trans        &trans  &trans        &trans  &trans
-&trans  &trans        &trans        &trans  &trans  &trans                                                  &trans  &uc UC_DE_UE  &trans  &uc UC_DE_OE  &trans  &trans
-&trans  &uc UC_DE_AE  &uc UC_DE_SS  &trans  &trans  &trans                                                  &trans  &trans        &trans  &trans        &trans  &trans
+&trans  &trans        &trans        &trans  &trans  &trans                                                  &trans  &trans        &trans  &trans        &trans  &trans
+&trans  &trans        &trans        &trans  &trans  &trans                                                  &trans  &trans        &trans  &trans        &trans  &trans
 &trans  &trans        &trans        &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans        &trans  &trans        &trans  &trans
 &trans  &trans        &trans        &trans  &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans        &trans  &trans        &trans  &trans
             >;
