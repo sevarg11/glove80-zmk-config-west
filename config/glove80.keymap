@@ -288,19 +288,19 @@
 umlautU_macro: umlautU_macro {
              compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&uc UC_DE_AE>;
+            bindings = <&uc UC_DE_UE>;
             label = "UMLAUTUMACRO";
         };
 umlautO_macro: umlautO_macro {
              compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&uc UC_DE_AE>;
+            bindings = <&uc UC_DE_OE>;
             label = "UMLAUTOMACRO";
         };
 de_eszett_macro: de_eszett_macro {
              compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&uc UC_DE_AE>;
+            bindings = <&uc UC_DE_SS>;
             label = "ESZETTMACRO";
         };
     };
