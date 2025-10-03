@@ -280,10 +280,28 @@
         };
 
         umlautA_macro: umlautA_macro {
-             compatible = "zmk,behavior";
-            #binding-cells = <1>;
+             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
             bindings = <&uc UC_DE_AE>;
             label = "UMLAUTAMACRO";
+        };
+umlautU_macro: umlautU_macro {
+             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&uc UC_DE_AE>;
+            label = "UMLAUTUMACRO";
+        };
+umlautO_macro: umlautO_macro {
+             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&uc UC_DE_AE>;
+            label = "UMLAUTOMACRO";
+        };
+de_eszett_macro: de_eszett_macro {
+             compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&uc UC_DE_AE>;
+            label = "ESZETTMACRO";
         };
     };
 
