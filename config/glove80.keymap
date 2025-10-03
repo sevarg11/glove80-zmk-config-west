@@ -225,7 +225,6 @@
             require-prior-idle-ms = <50>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <25>;
-            retro-tap;
         };
 
         umlautUht: umlautUht {
@@ -240,7 +239,6 @@
             require-prior-idle-ms = <50>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <25>;
-            retro-tap;
         };
 
         umlautOht: umlautOht {
@@ -255,7 +253,6 @@
             require-prior-idle-ms = <50>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <25>;
-            retro-tap;
         };
 
         eszettHT: eszettHT {
@@ -270,7 +267,6 @@
             require-prior-idle-ms = <50>;
             hold-trigger-on-release;
             hold-trigger-key-positions = <25>;
-            retro-tap;
         };
     };
 
