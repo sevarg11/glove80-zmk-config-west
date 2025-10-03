@@ -216,7 +216,7 @@
         umlautAht: umlautAht {
             compatible = "zmk,behavior-hold-tap";
             label = "UMLAUTAHT";
-            bindings = <&uc UC_DE_AE>, <&kp>;
+            bindings = <&umlautA_macro>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "balanced";
@@ -231,7 +231,7 @@
         umlautUht: umlautUht {
             compatible = "zmk,behavior-hold-tap";
             label = "UMLAUTUHT";
-            bindings = <&uc UC_DE_UE>, <&kp>;
+            bindings = <&umlautU_macro>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "balanced";
@@ -246,7 +246,7 @@
         umlautOht: umlautOht {
             compatible = "zmk,behavior-hold-tap";
             label = "UMLAUTOHT";
-            bindings = <&uc UC_DE_OE>, <&kp>;
+            bindings = <&umlautO_macro>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "balanced";
@@ -261,7 +261,7 @@
         eszettHT: eszettHT {
             compatible = "zmk,behavior-hold-tap";
             label = "ESZETTHT";
-            bindings = <&uc UC_DE_SS>, <&kp>;
+            bindings = <&de_eszett_macro>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "balanced";
