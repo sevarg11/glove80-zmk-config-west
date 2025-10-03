@@ -295,6 +295,27 @@
             timeout-ms = <150>;
             layers = <4>;
         };
+
+        umlautU {
+            bindings = <&none>;
+            key-positions = <29 25>;
+            timeout-ms = <150>;
+            layers = <4>;
+        };
+
+        umlautO {
+            bindings = <&none>;
+            key-positions = <25 31>;
+            timeout-ms = <150>;
+            layers = <4>;
+        };
+
+        schluss {
+            bindings = <&none>;
+            key-positions = <36 71>;
+            timeout-ms = <150>;
+            layers = <4>;
+        };
     };
 
     /* #define for key positions */
