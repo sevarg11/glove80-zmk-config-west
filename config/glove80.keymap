@@ -290,7 +290,7 @@
         };
 
         umlautA {
-            bindings = <&kp DE_A_UMLAUT>;
+            bindings = <&uc UC_DE_AE>;
             key-positions = <35 25>;
             timeout-ms = <150>;
             layers = <4>;
