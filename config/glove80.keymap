@@ -16,7 +16,8 @@
 #define HYPER LC(LS(LG(LALT)))
 
 &uc {
-    default-mode = <UC_MODE_WIN_COMPOSE>;  // Replace with desired input system.
+    default-mode = <UC_MODE_WIN_COMPOSE>; 
+    minimum-length = <4>;
 };
 
 // layers
