@@ -500,7 +500,7 @@
 &trans  &trans  &trans  &kp DE_UNDERSCORE  &trans  &trans                                                  &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT   &kp BACKSLASH  &trans
 &trans  &kp AT  &trans  &kp DE_EURO        &trans  &trans                                                  &trans    &trans    &trans    &trans     &trans         &trans
 &trans  &trans  &trans  &trans             &trans  &trans                                                  &trans    &trans    &trans    &trans     &trans         &trans
-&trans  &trans  &trans  &trans             &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans     &trans         &kp PIPE
+&trans  &kp DE_SINGLE_RIGHT_ANGLE_QUOTE  &kp DE_DOUBLE_RIGHT_ANGLE_QUOTE  &kp DE_SINGLE_LEFT_ANGLE_QUOTE  &kp DE_DOUBLE_LEFT_ANGLE_QUOTE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans     &trans         &kp PIPE
 &trans  &trans  &trans  &trans             &trans          &trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans    &kp TILDE  &trans         &trans
             >;
         };
