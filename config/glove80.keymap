@@ -487,8 +487,8 @@
             bindings = <
 &trans     &trans     &trans             &trans          &trans                                                                             &trans     &trans                &trans                 &trans               &trans
 &trans     &kp EXCL   &kp DOUBLE_QUOTES  &uc DE_SECTION  &kp DOLLAR  &kp PERCENT                                                  &kp AMPS  &kp SLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL            &kp QUESTION
-&trans     &kp LS(Q)  &kp LS(W)              &kp E           &kp R       &kp T                                                        &kp Z     &kp U      &kp I                 &kp O                  &kp P                &uc LS(DE_U_UMLAUT)
-&trans     &kp LS(A)  &kp LS(S)              &kp D           &kp F       &kp G                                                        &kp H     &kp J      &kp K                 &kp L                  &uc LS(DE_O_UMLAUT)  &uc LS(DE_A_UMLAUT)
+&trans     &kp LS(Q)  &kp LS(W)              &kp E           &kp R       &kp T                                                        &kp Z     &kp U      &kp I                 &kp O                  &kp P            &uc DE_U_UPPER_UMLAUT
+&trans     &kp LS(A)  &kp LS(S)              &kp D           &kp F       &kp G                                                        &kp H     &kp J      &kp K                 &kp L                  &uc DE_O_UPPER_UMLAUT  &uc DE_A_UPPER_UMLAUT
 &kp CARET  &kp LS(Y)  &kp LS(X)              &kp C           &kp V       &kp B        &trans  &trans  &trans  &trans  &trans  &trans  &kp N     &kp M      &kp SEMI              &kp COLON              &kp UNDER            &kp GT
 &trans     &trans     &trans             &trans          &trans                   &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans                &kp ASTRK              &kp APOS             &trans
             >;
