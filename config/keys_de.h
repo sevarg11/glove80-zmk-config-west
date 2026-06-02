@@ -333,10 +333,10 @@
 #define DE_A_UPPER_UMLAUT 0xc4
 /* ö */
 #define DE_O_UMLAUT 0xf6
-#define DE_A_UPPER_UMLAUT 0xd6
+#define DE_O_UPPER_UMLAUT 0xd6
 /* ü */
 #define DE_U_UMLAUT 0xfc
-#define DE_A_UPPER_UMLAUT 0xdc
+#define DE_U_UPPER_UMLAUT 0xdc
 /* € */
 #define DE_EURO 0x20ac
 
