@@ -440,7 +440,7 @@
             >;
         };
 
-        Language_Layer_Base {
+        language_layer_base {
             bindings = <
 &trans         &trans     &trans  &trans  &trans                                                                           &trans  &trans     &trans      &trans        &trans
 &trans         &kp N1     &kp N2  &kp N3  &kp N4  &kp N5                                                           &kp N6  &kp N7  &kp N8     &kp N9      &kp N0        &uc DE_SHARP_S
@@ -451,7 +451,7 @@
             >;
         };
 
-        Language_Layer_Shift {
+        language_layer_shift {
             bindings = <
 &trans     &trans     &trans             &trans          &trans                                                                                 &trans     &trans                &trans                 &trans               &trans
 &trans     &kp EXCL   &kp DOUBLE_QUOTES  &uc DE_SECTION  &kp DOLLAR  &kp PERCENT                                                      &kp AMPS  &kp SLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL            &kp QUESTION
@@ -462,7 +462,7 @@
             >;
         };
 
-        Language_Layer_Alt {
+        language_layer_alt {
             bindings = <
 &trans  &trans  &trans  &trans             &trans                                                                    &trans    &trans    &trans     &trans         &trans
 &trans  &trans  &trans  &kp DE_UNDERSCORE  &trans  &trans                                                  &kp LBRC  &kp RBRC  &kp LBKT  &kp RBKT   &kp BACKSLASH  &trans
@@ -473,7 +473,7 @@
             >;
         };
 
-        Intellij {
+        intellij {
             bindings = <
 &trans  &trans  &trans  &trans                  &trans                                                                                 &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans                  &trans      &trans                                                             &trans  &trans  &trans  &trans  &trans  &trans
@@ -484,7 +484,7 @@
             >;
         };
 
-        Symbol {
+        symbol {
             bindings = <
 &trans           &trans            &trans          &trans                 &trans                                                                                                               &trans             &trans          &trans      &trans         &trans
 &kp GRAVE        &kp COMMA         &kp LPAR        &kp RIGHT_PARENTHESIS  &kp SEMICOLON      &kp PERIOD                                                                            &trans      &trans             &trans          &trans      &trans         &trans
