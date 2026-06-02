@@ -329,11 +329,14 @@
 #define DE_CAPITAL_SZ (DE_CAPITAL_SHARP_S)
 
 /* ä */
-#define DE_A_UMLAUT 0xe4  0xc4
+#define DE_A_UMLAUT 0xe4
+#define DE_A_UPPER_UMLAUT 0xc4
 /* ö */
-#define DE_O_UMLAUT 0xf6  0xd6
+#define DE_O_UMLAUT 0xf6
+#define DE_A_UPPER_UMLAUT 0xd6
 /* ü */
-#define DE_U_UMLAUT 0xfc  0xdc
+#define DE_U_UMLAUT 0xfc
+#define DE_A_UPPER_UMLAUT 0xdc
 /* € */
 #define DE_EURO 0x20ac
 
