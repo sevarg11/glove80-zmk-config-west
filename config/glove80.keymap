@@ -155,7 +155,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SPACEBARTAPDANCE";
             #binding-cells = <0>;
-            bindings = <&layerHoldTap 8 SPACE>, <&double_space_period>;
+            bindings = <&layerHoldTap 7 SPACE>, <&double_space_period>;
         };
 
         ShiftHold: ShiftHold {
@@ -398,12 +398,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1                      &kp F2                &kp F3                &kp F4                &kp F5                                                                                                                                                                 &kp F6                &kp F7                      &kp F8                    &kp F9                    &kp F10
-&kp ESC                     &ShiftHold LS(N1) N1  &ShiftHold LS(N2) N2  &ShiftHold LS(N3) N3  &ShiftHold LS(N4) N4  &ShiftHold LS(N5) N5                                                                                                       &ShiftHold LS(N6) N6  &ShiftHold LS(N7) N7  &ShiftHold LS(N8) N8        &ShiftHold LS(N9) N9      &ShiftHold LS(N0) N0      &kp BACKSLASH
-&kp TAB                     &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                                                                                                                      &kp Y                 &kp U                 &kp I                       &kp O                     &kp P                     &ShiftHold LS(MINUS) MINUS
-&ShiftHold LS(EQUAL) EQUAL  &kp A                 &kp S                 &kp D                 &kp F                 &kp G                                                                                                                      &kp H                 &kp J                 &kp K                       &kp L                     &ShiftHold LS(SEMI) SEMI  &ShiftHold LS(SQT) SQT
-&kp GRAVE                   &ShiftHold LC(Z) Z    &ShiftHold LC(X) X    &ShiftHold LC(C) C    &ShiftHold LC(V) V    &kp B                 &DoubleTapShift  &sk LCTRL            &layer_td                 &kp LGUI  &sk RCTRL   &sk RSHFT      &kp N                 &kp M                 &ShiftHold LS(COMMA) COMMA  &ShiftHold LS(DOT) DOT    &ShiftHold LS(FSLH) FSLH  &kp PG_UP
-&magic 3 0                  &kp HOME              &kp END               &kp LEFT              &kp RIGHT                                   &kp BACKSPACE    &layerHoldTap 7 DEL  &layerHoldTap 4 LEFT_ALT  &sk RALT  &kp RETURN  &Space_HT 8 0                        &kp UP                &kp DOWN                    &ShiftHold LS(LBKT) LBKT  &ShiftHold LS(RBKT) RBKT  &kp PG_DN
+&kp F1                      &kp F2                &kp F3                &kp F4                &kp F5                                                                                                                                                     &kp F6                &kp F7                      &kp F8                    &kp F9                    &kp F10
+&kp ESC                     &ShiftHold LS(N1) N1  &ShiftHold LS(N2) N2  &ShiftHold LS(N3) N3  &ShiftHold LS(N4) N4  &ShiftHold LS(N5) N5                                                                                           &ShiftHold LS(N6) N6  &ShiftHold LS(N7) N7  &ShiftHold LS(N8) N8        &ShiftHold LS(N9) N9      &ShiftHold LS(N0) N0      &kp BACKSLASH
+&kp TAB                     &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                                                                                                          &kp Y                 &kp U                 &kp I                       &kp O                     &kp P                     &ShiftHold LS(MINUS) MINUS
+&ShiftHold LS(EQUAL) EQUAL  &kp A                 &kp S                 &kp D                 &kp F                 &kp G                                                                                                          &kp H                 &kp J                 &kp K                       &kp L                     &ShiftHold LS(SEMI) SEMI  &ShiftHold LS(SQT) SQT
+&kp GRAVE                   &ShiftHold LC(Z) Z    &ShiftHold LC(X) X    &ShiftHold LC(C) C    &ShiftHold LC(V) V    &kp B                 &DoubleTapShift  &sk LCTRL            &layer_td     &kp LGUI  &sk RCTRL   &sk RSHFT      &kp N                 &kp M                 &ShiftHold LS(COMMA) COMMA  &ShiftHold LS(DOT) DOT    &ShiftHold LS(FSLH) FSLH  &kp PG_UP
+&magic 3 0                  &kp HOME              &kp END               &kp LEFT              &kp RIGHT                                   &kp BACKSPACE    &layerHoldTap 7 DEL  &kp LEFT_ALT  &sk RALT  &kp RETURN  &Space_HT 7 0                        &kp UP                &kp DOWN                    &ShiftHold LS(LBKT) LBKT  &ShiftHold LS(RBKT) RBKT  &kp PG_DN
             >;
         };
 
@@ -431,23 +431,23 @@
 
         magic_layer {
             bindings = <
-&bt BT_CLR   &kt CAPSLOCK     &kt SCROLLLOCK   &tog 1           &tog 4                                                                                    &none  &none  &none  &none  &bt BT_CLR_ALL
-&none        &none            &none            &none            &none            &none                                                             &none  &none  &none  &none  &none  &none
-&none        &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none  &none
-&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none  &bootloader
-&sys_reset   &studio_unlock   &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none  &none  &sys_reset
-&none        &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none  &to 0
+&bt BT_CLR  &kt CAPSLOCK     &kt SCROLLLOCK   &tog 1           &tog 4                                                                                    &none  &none  &none   &none  &bt BT_CLR_ALL
+&none       &none            &none            &none            &none            &none                                                             &none  &none  &none  &none   &none  &none
+&none       &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none   &none  &none
+&none       &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &tog 4  &none  &bootloader
+&sys_reset  &studio_unlock   &none            &none            &none            &none            &bt_2  &bt_3  &none         &none  &none  &none  &none  &none  &none  &none   &none  &sys_reset
+&none       &none            &none            &none            &none                             &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none   &none  &to 0
             >;
         };
 
         language_layer_base {
             bindings = <
-&trans     &trans  &trans  &trans  &trans                                                                           &trans  &trans     &trans      &trans     &trans
-&trans     &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                                           &kp N6  &kp N7  &kp N8     &kp N9      &kp N0     &uc DE_SHARP_S
-&trans     &kp Q   &kp W   &kp E   &kp R   &kp T                                                            &kp Z   &kp U   &kp I      &kp O       &kp P      &uc DE_U_UMLAUT
-&kp GRAVE  &kp A   &kp S   &kp D   &kp F   &kp G                                                            &kp H   &kp J   &kp K      &kp L       &uc DE_O_UMLAUT  &uc DE_A_UMLAUT
-&uc DE_DEGREE   &kp Z   &kp X   &kp C   &kp V   &kp B   &mo 5   &trans  &trans    &trans         &trans  &mo 5   &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp MINUS  &kp LESS_THAN
-&trans     &trans  &trans  &trans  &trans          &trans  &trans  &kp LALT  &kp RIGHT_ALT  &trans  &trans          &trans  &trans     &kp PLUS    &kp HASH   &trans
+&trans     &trans  &trans  &trans  &trans                                                                    &trans  &trans     &trans      &trans     &trans
+&trans     &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                                    &kp N6  &kp N7  &kp N8     &kp N9      &kp N0     &uc 0xdf
+&trans     &kp Q   &kp W   &kp E   &kp R   &kp T                                                     &kp Z   &kp U   &kp I      &kp O       &kp P      &uc 0xfc
+&kp GRAVE  &kp A   &kp S   &kp D   &kp F   &kp G                                                     &kp H   &kp J   &kp K      &kp L       &uc 0xf6   &uc 0xe4
+&uc 0xb0   &kp Z   &kp X   &kp C   &kp V   &kp B   &mo 5   &trans  &trans    &trans  &trans  &mo 5   &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp MINUS  &kp LESS_THAN
+&trans     &trans  &trans  &trans  &trans          &trans  &trans  &kp LALT  &mo 6   &trans  &trans          &trans  &trans     &kp PLUS    &kp HASH   &trans
             >;
         };
 
@@ -470,17 +470,6 @@
 &trans    &trans                           &trans                           &trans                          &trans                          &trans                                                  &trans    &trans    &trans    &trans    &trans         &trans
 &trans    &uc DE_SINGLE_RIGHT_ANGLE_QUOTE  &uc DE_DOUBLE_RIGHT_ANGLE_QUOTE  &uc DE_SINGLE_LEFT_ANGLE_QUOTE  &uc DE_DOUBLE_LEFT_ANGLE_QUOTE  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans         &trans
 &kp PIPE  &trans                           &trans                           &trans                          &trans                                  &trans  &trans  &trans  &trans  &trans  &trans            &trans    &trans    &trans    &kp TILDE      &trans
-            >;
-        };
-
-        intellij {
-            bindings = <
-&trans  &trans  &trans  &trans                  &trans                                                                                 &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans                  &trans      &trans                                                             &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &none   &none   &kp LA(LS(LEFT_ARROW))  &kp LS(F7)  &kp LA(LS(RIGHT))                                                  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &none   &none   &kp LC(LA(R))           &none       &kp LA(LC(A))                                                      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &none   &none   &none                   &kp F7      &none              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans                  &trans                         &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
