@@ -296,19 +296,19 @@
 #define DE_TILDE (RA(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE)))
 
 /* § */
-#define DE_SECTION 0xa7
+#define DE_SECTION 0xa7 0
 #define DE_SECT (DE_SECTION)
 
 /* ° */
-#define DE_DEGREE 0xb0
+#define DE_DEGREE 0xb0 0
 #define DE_DEG (DE_DEGREE)
 
 /* ² */
-#define DE_SUPER2 0xb2
+#define DE_SUPER2 0xb2 0
 #define DE_SQUARE (DE_SUPER2)
 
 /* ³ */
-#define DE_SUPER3 0xb3
+#define DE_SUPER3 0xb3 0
 #define DE_CUBE (DE_SUPER3)
 
 /* ´ */
@@ -319,7 +319,7 @@
 #define DE_MICRO (DE_MU)
 
 /* ß */
-#define DE_SHARP_S 0xdf
+#define DE_SHARP_S 0xdf 0
 #define DE_ESZETT (DE_SHARP_S)
 #define DE_SZ (DE_SHARP_S)
 
@@ -329,26 +329,26 @@
 #define DE_CAPITAL_SZ (DE_CAPITAL_SHARP_S)
 
 /* ä */
-#define DE_A_UMLAUT 0xe4
-#define DE_A_UPPER_UMLAUT 0xc4
+#define DE_A_UMLAUT 0xe4 0
+#define DE_A_UPPER_UMLAUT 0xc4 0
 /* ö */
-#define DE_O_UMLAUT 0xf6
-#define DE_O_UPPER_UMLAUT 0xd6
+#define DE_O_UMLAUT 0xf6 0
+#define DE_O_UPPER_UMLAUT 0xd6 0
 /* ü */
-#define DE_U_UMLAUT 0xfc
-#define DE_U_UPPER_UMLAUT 0xdc
+#define DE_U_UMLAUT 0xfc 0
+#define DE_U_UPPER_UMLAUT 0xdc 0
 /* € */
-#define DE_EURO 0x20ac
+#define DE_EURO 0x20ac 0
 
-#define DE_SINGLE_LEFT_ANGLE_QUOTE 0x2039
-#define DE_SINGLE_RIGHT_ANGLE_QUOTE 0x203a
-#define DE_DOUBLE_LEFT_ANGLE_QUOTE 0x00ab
-#define DE_DOUBLE_RIGHT_ANGLE_QUOTE 0x00bb
-#define DE_RIGHT_SINGLE_QUOTE 0x2019
-#define DE_EM_DASH 0x2014
-#define DE_INVERTED_EXCLAMATION 0xa1
-#define DE_INVERTED_QUESTION 0xbf
-#define DE_EN_DASH 0x2013
-#define DE_MICRO_SIGN 0xb5
-#define DE_MIDDLE_DOT 0xb7
+#define DE_SINGLE_LEFT_ANGLE_QUOTE 0x2039 0
+#define DE_SINGLE_RIGHT_ANGLE_QUOTE 0x203a 0
+#define DE_DOUBLE_LEFT_ANGLE_QUOTE 0x00ab 0
+#define DE_DOUBLE_RIGHT_ANGLE_QUOTE 0x00bb 0
+#define DE_RIGHT_SINGLE_QUOTE 0x2019 0
+#define DE_EM_DASH 0x2014 0
+#define DE_INVERTED_EXCLAMATION 0xa1 0
+#define DE_INVERTED_QUESTION 0xbf 0
+#define DE_EN_DASH 0x2013 0
+#define DE_MICRO_SIGN 0xb5 0
+#define DE_MIDDLE_DOT 0xb7 0
 
