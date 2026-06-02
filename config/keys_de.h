@@ -300,11 +300,11 @@
 #define DE_SECT (DE_SECTION)
 
 /* ° */
-#define DE_DEGREE 0xB0
+#define DE_DEGREE 0xb0
 #define DE_DEG (DE_DEGREE)
 
 /* ² */
-#define DE_SUPER2 0xB2
+#define DE_SUPER2 0xb2
 #define DE_SQUARE (DE_SUPER2)
 
 /* ³ */
