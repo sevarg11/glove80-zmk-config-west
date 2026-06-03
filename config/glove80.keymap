@@ -494,12 +494,12 @@
 
         language_layer_base {
             bindings = <
-&trans         &trans  &trans  &trans  &trans                                                                    &trans  &trans     &trans      &trans           &trans
-&trans         &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                                                    &kp N6  &kp N7  &kp N8     &kp N9      &kp N0           &uc DE_SHARP_S
-&trans         &kp Q   &kp W   &kp E   &kp R   &kp T                                                     &kp Z   &kp U   &kp I      &kp O       &kp P            &uc DE_U_UMLAUT
-&kp GRAVE      &kp A   &kp S   &kp D   &kp F   &kp G                                                     &kp H   &kp J   &kp K      &kp L       &uc DE_O_UMLAUT  &uc DE_A_UMLAUT
-&uc DE_DEGREE  &kp Y   &kp X   &kp C   &kp V   &kp B   &mo 5   &trans  &trans    &trans  &trans  &mo 5   &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp MINUS        &kp LESS_THAN
-&trans         &trans  &trans  &trans  &trans          &trans  &trans  &kp LALT  &mo 6   &trans  &trans          &trans  &trans     &kp PLUS    &kp HASH         &trans
+&trans         &trans              &trans              &trans              &trans                                                                                &trans  &trans     &trans      &trans           &trans
+&trans         &kp N1              &kp N2              &kp N3              &kp N4              &kp N5                                                    &kp N6  &kp N7  &kp N8     &kp N9      &kp N0           &uc DE_SHARP_S
+&trans         &kp Q               &kp W               &kp E               &kp R               &kp T                                                     &kp Z   &kp U   &kp I      &kp O       &kp P            &uc DE_U_UMLAUT
+&kp GRAVE      &kp A               &kp S               &kp D               &kp F               &kp G                                                     &kp H   &kp J   &kp K      &kp L       &uc DE_O_UMLAUT  &uc DE_A_UMLAUT
+&uc DE_DEGREE  &ShiftHold LC(Z) Y  &ShiftHold LC(X) X  &ShiftHold LC(C) C  &ShiftHold LC(V) V  &kp B   &mo 5   &trans  &trans    &trans  &trans  &mo 5   &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp MINUS        &kp LESS_THAN
+&trans         &trans              &trans              &trans              &trans                      &trans  &trans  &kp LALT  &mo 6   &trans  &trans          &trans  &trans     &kp PLUS    &kp HASH         &trans
             >;
         };
 
