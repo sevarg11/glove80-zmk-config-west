@@ -27,6 +27,9 @@
 #define LOWER 2
 #define MAGIC 3
 #define LANGUAGE 4
+#define LANGUAGE_SHIFT 5
+#define LANGUAGE_ALT 6
+#define SYMBOLS 7
 
 /* To deal with the situation where there is no Lower layer, to keep &lower happy */
 
@@ -60,6 +63,10 @@
 #define NUMI  &ug_nl WHITE ORANGE
 #define NUML  &ug_nl RED YELLOW
 
+#define LL1 0xFF0000
+#define LL2 0xFF3333
+#define LL3 0xFF6666
+
 / {
     underglow-layer {
         compatible = "zmk,underglow-layer";
@@ -79,12 +86,12 @@
 
         hrm {
             bindings = <
-                &ug BLUE &ug ___ &ug ___ &ug ___ &ug ___                                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug GREEN &ug BLUE &ug TEAL &ug ___ &ug ___                                                  &ug ___ &ug TEAL &ug BLUE &ug GREEN &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug TEAL &ug BLUE &ug ___  &ug ___ &ug BLUE &ug TEAL &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug GREEN  &ug GREEN &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug BLUE CAPSL &ug ___ &ug ___ &ug ___                                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug GREEN &ug BLUE &ug TEAL &ug ___                                                  &ug ___ &ug TEAL &ug BLUE &ug GREEN &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug TEAL &ug BLUE &ug ___  &ug ___ &ug BLUE &ug TEAL &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    LBAT &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug GREEN  &ug GREEN &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
             >;
 
             layer-id = <HRM>;
@@ -105,15 +112,54 @@
 
         languageLayer {
             bindings = <
-                &ug RED &ug RED &ug RED &ug RED &ug RED                                                                  &ug RED &ug RED &ug RED &ug RED &ug RED
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-                &ug ___ &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug LL1 CAPSL &ug LL1 &ug LL1 &ug LL1                                                                  &ug LL1 &ug LL1 &ug LL1 &ug LL1 &ug LL1
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    LBAT &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
             >;
 
             layer-id = <LANGUAGE>;
+        };
+
+        languageShiftLayer {
+            bindings = <
+    &ug LL2 &ug CAPSL &ug LL2 &ug LL2 &ug LL2                                                                  &ug LL2 &ug LL2 &ug LL2 &ug LL2 &ug LL2
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    LBAT &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            >;
+
+            layer-id = <LANGUAGE_SHIFT>;
+        };
+
+        languageAltLayer {
+            bindings = <
+    &ug LL3 &ug CAPSL &ug LL3 &ug LL3 &ug LL3                                                                  &ug LL3 &ug LL3 &ug LL3 &ug LL3 &ug LL3
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    LBAT &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            >;
+
+            layer-id = <LANGUAGE_ALT>;
+        };
+
+        symbolLayer {
+            bindings = <
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+            >;
+
+            layer-id = <SYMBOLS>;
         };
     };
 };
