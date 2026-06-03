@@ -223,6 +223,13 @@
             quick-tap-ms = <150>;
             require-prior-idle-ms = <150>;
         };
+
+        LALT_TD: LALT_TD {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LALT_TD";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_ALT>, <&kp SPACE>;
+        };
     };
 
     macros {
@@ -398,12 +405,12 @@
             // | MAGIC | HOME| END | LEFT | RIGHT|      | BSPC  | DEL   | LALT  | | RALT  | RET   | SPACE |      |  UP   | DOWN  |  [   |   ]   | PGDN |
 
             bindings = <
-&kp F1                      &kp F2                &kp F3                &kp F4                &kp F5                                                                                                                                                         &kp F6                &kp F7                      &kp F8                    &kp F9                    &kp F10
-&kp ESC                     &ShiftHold LS(N1) N1  &ShiftHold LS(N2) N2  &ShiftHold LS(N3) N3  &ShiftHold LS(N4) N4  &ShiftHold LS(N5) N5                                                                                               &ShiftHold LS(N6) N6  &ShiftHold LS(N7) N7  &ShiftHold LS(N8) N8        &ShiftHold LS(N9) N9      &ShiftHold LS(N0) N0      &kp BACKSLASH
-&kp TAB                     &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                                                                                                              &kp Y                 &kp U                 &kp I                       &kp O                     &kp P                     &ShiftHold LS(MINUS) MINUS
-&ShiftHold LS(EQUAL) EQUAL  &kp A                 &kp S                 &kp D                 &kp F                 &kp G                                                                                                              &kp H                 &kp J                 &kp K                       &kp L                     &ShiftHold LS(SEMI) SEMI  &ShiftHold LS(SQT) SQT
-&kp GRAVE                   &ShiftHold LC(Z) Z    &ShiftHold LC(X) X    &ShiftHold LC(C) C    &ShiftHold LC(V) V    &kp B                 &DoubleTapShift  &sk LCTRL            &layer_td     &kp LGUI  &sk RCTRL   &sk RSHFT          &kp N                 &kp M                 &ShiftHold LS(COMMA) COMMA  &ShiftHold LS(DOT) DOT    &ShiftHold LS(FSLH) FSLH  &kp PG_UP
-&magic 3 0                  &kp HOME              &kp END               &kp LEFT              &kp RIGHT                                   &kp BACKSPACE    &layerHoldTap 7 DEL  &kp LEFT_ALT  &sk RALT  &kp RETURN  &SpaceBarTapDance                        &kp UP                &kp DOWN                    &ShiftHold LS(LBKT) LBKT  &ShiftHold LS(RBKT) RBKT  &kp PG_DN
+&kp F1                      &kp F2                &kp F3                &kp F4                &kp F5                                                                                                                                                      &kp F6                &kp F7                      &kp F8                    &kp F9                    &kp F10
+&kp ESC                     &ShiftHold LS(N1) N1  &ShiftHold LS(N2) N2  &ShiftHold LS(N3) N3  &ShiftHold LS(N4) N4  &ShiftHold LS(N5) N5                                                                                            &ShiftHold LS(N6) N6  &ShiftHold LS(N7) N7  &ShiftHold LS(N8) N8        &ShiftHold LS(N9) N9      &ShiftHold LS(N0) N0      &kp BACKSLASH
+&kp TAB                     &kp Q                 &kp W                 &kp E                 &kp R                 &kp T                                                                                                           &kp Y                 &kp U                 &kp I                       &kp O                     &kp P                     &ShiftHold LS(MINUS) MINUS
+&ShiftHold LS(EQUAL) EQUAL  &kp A                 &kp S                 &kp D                 &kp F                 &kp G                                                                                                           &kp H                 &kp J                 &kp K                       &kp L                     &ShiftHold LS(SEMI) SEMI  &ShiftHold LS(SQT) SQT
+&kp GRAVE                   &ShiftHold LC(Z) Z    &ShiftHold LC(X) X    &ShiftHold LC(C) C    &ShiftHold LC(V) V    &kp B                 &DoubleTapShift  &sk LCTRL            &layer_td  &kp LGUI  &sk RCTRL   &sk RSHFT          &kp N                 &kp M                 &ShiftHold LS(COMMA) COMMA  &ShiftHold LS(DOT) DOT    &ShiftHold LS(FSLH) FSLH  &kp PG_UP
+&magic 3 0                  &kp HOME              &kp END               &kp LEFT              &kp RIGHT                                   &kp BACKSPACE    &layerHoldTap 7 DEL  &LALT_TD   &sk RALT  &kp RETURN  &SpaceBarTapDance                        &kp UP                &kp DOWN                    &ShiftHold LS(LBKT) LBKT  &ShiftHold LS(RBKT) RBKT  &kp PG_DN
             >;
         };
 
@@ -453,12 +460,12 @@
 
         language_layer_shift {
             bindings = <
-&trans     &trans     &trans             &trans          &trans                                                                             &trans     &trans                &trans                 &trans                 &trans
-&trans     &kp EXCL   &kp DOUBLE_QUOTES  &uc DE_SECTION  &kp DOLLAR   &kp PERCENT                                                    &kp AMPS  &kp SLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL              &kp QUESTION
-&trans     &kp LS(Q)  &kp LS(W)          &kp LS(E)       &kp LS(R)    &kp LS(T)                                                    &kp LS(Z)    &kp LS(U)      &kp LS(I)                 &kp LS(O)                  &kp LS(P)                  &uc DE_U_UPPER_UMLAUT
-&trans     &kp LS(A)  &kp LS(S)          &kp LS(D)       &kp LS(F)    &kp LS(G)                                                     &kp LS(H)    &kp LS(J)      &kp LS(K)                 &kp LS(L)                  &uc DE_O_UPPER_UMLAUT  &uc DE_A_UPPER_UMLAUT
-&kp CARET  &kp LS(Y)  &kp LS(X)          &kp LS(C)       &kp LS(V)    &kp LS(B)   &trans  &trans  &trans  &trans  &trans  &trans  &kp LS(N)     &kp LS(M)      &kp SEMI              &kp COLON              &kp UNDER              &kp GREATER_THAN
-&trans     &trans     &trans             &trans          &trans                   &trans  &trans  &trans  &trans  &trans  &trans            &trans     &trans                &kp ASTRK              &kp APOS               &trans
+&trans     &trans     &trans             &trans          &trans                                                                              &trans     &trans                &trans                 &trans                 &trans
+&trans     &kp EXCL   &kp DOUBLE_QUOTES  &uc DE_SECTION  &kp DOLLAR  &kp PERCENT                                                  &kp AMPS   &kp SLASH  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL              &kp QUESTION
+&trans     &kp LS(Q)  &kp LS(W)          &kp LS(E)       &kp LS(R)   &kp LS(T)                                                    &kp LS(Z)  &kp LS(U)  &kp LS(I)             &kp LS(O)              &kp LS(P)              &uc DE_U_UPPER_UMLAUT
+&trans     &kp LS(A)  &kp LS(S)          &kp LS(D)       &kp LS(F)   &kp LS(G)                                                    &kp LS(H)  &kp LS(J)  &kp LS(K)             &kp LS(L)              &uc DE_O_UPPER_UMLAUT  &uc DE_A_UPPER_UMLAUT
+&kp CARET  &kp LS(Y)  &kp LS(X)          &kp LS(C)       &kp LS(V)   &kp LS(B)    &trans  &trans  &trans  &trans  &trans  &trans  &kp LS(N)  &kp LS(M)  &kp SEMI              &kp COLON              &kp UNDER              &kp GREATER_THAN
+&trans     &trans     &trans             &trans          &trans                   &trans  &trans  &trans  &trans  &trans  &trans             &trans     &trans                &kp ASTRK              &kp APOS               &trans
             >;
         };
 
