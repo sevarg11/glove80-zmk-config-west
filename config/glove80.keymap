@@ -85,12 +85,12 @@
 
         hrm {
             bindings = <
-    &ug BLUE CAPSL &ug ___ &ug ___ &ug ___                                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug BLUE CAPSL  &ug ___ &ug ___ &ug ___                                                                      &ug ___  &ug ___  &ug ___   &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                      &ug ___ &ug ___  &ug ___  &ug ___   &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                      &ug ___ &ug ___  &ug ___  &ug ___   &ug ___ &ug ___
     &ug ___ &ug ___ &ug GREEN &ug BLUE &ug TEAL &ug ___                                                  &ug ___ &ug TEAL &ug BLUE &ug GREEN &ug ___ &ug ___
-    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug TEAL &ug BLUE &ug ___  &ug ___ &ug BLUE &ug TEAL &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-    LBAT &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug GREEN  &ug GREEN &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug TEAL &ug BLUE &ug ___  &ug ___ &ug BLUE &ug TEAL &ug ___ &ug ___  &ug ___  &ug ___   &ug ___ &ug ___
+    LBAT    &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug GREEN  &ug GREEN &ug ___ &ug ___         &ug ___  &ug ___  &ug ___   &ug ___ &ug ___
             >;
 
             layer-id = <HRM>;
@@ -102,7 +102,7 @@
     &ug PURPLE &ug PINK &ug PINK   &ug   PINK &ug   PINK &ug PINK                                                             &ug ___ NUMI     &ug ORANGE  &ug ORANGE &ug ORANGE  &ug RED
     &ug PURPLE &ug ___  &ug ___    &ug ORANGE &ug ___    &ug ___                                                              &ug ___ NUML     NUML        NUML       &ug ORANGE  &ug ___
     &ug PURPLE &ug ___  &ug ORANGE &ug    RED &ug ORANGE &ug ___                                                              &ug ___ NUML     NUML        NUML       &ug ORANGE  &ug ___
-    &ug   BLUE &ug ___  &ug RED    &ug    RED &ug    RED &ug ___  &ug_cl BLUE TEAL &ug ___   &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ NUML     NUML        NUML       &ug    RED  &ug BLUE
+    &ug BLUE   &ug ___  &ug RED    &ug    RED &ug    RED &ug ___  &ug_cl BLUE TEAL &ug ___   &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ NUML     NUML        NUML       &ug    RED  &ug BLUE
     &ug ___    &ug ___  &ug ORANGE &ug ORANGE &ug ORANGE          &ug ___          &ug GREEN &ug ___  &ug ___ &ug ___ &ug ___         NUML     NUML        &ug ORANGE &ug    RED  &ug ___
             >;
 
@@ -111,7 +111,7 @@
 
         languageLayer {
             bindings = <
-    &ug LL1 CAPSL &ug LL1 &ug LL1 &ug LL1                                                                  &ug LL1 &ug LL1 &ug LL1 &ug LL1 &ug LL1
+    &ug LL1 CAPSL   &ug LL1 &ug LL1 &ug LL1                                                                  &ug LL1 &ug LL1 &ug LL1 &ug LL1 &ug LL1
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
@@ -124,12 +124,12 @@
 
         languageShiftLayer {
             bindings = <
-    &ug LL2 &ug CAPSL &ug LL2 &ug LL2 &ug LL2                                                                  &ug LL2 &ug LL2 &ug LL2 &ug LL2 &ug LL2
+    &ug LL2 CAPSL   &ug LL2 &ug LL2 &ug LL2                                                                  &ug LL2 &ug LL2 &ug LL2 &ug LL2 &ug LL2
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-    LBAT &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    LBAT    &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
             >;
 
             layer-id = <LANGUAGE_SHIFT>;
@@ -137,12 +137,12 @@
 
         languageAltLayer {
             bindings = <
-    &ug LL3 &ug CAPSL &ug LL3 &ug LL3 &ug LL3                                                                  &ug LL3 &ug LL3 &ug LL3 &ug LL3 &ug LL3
+    &ug LL3 CAPSL   &ug LL3 &ug LL3 &ug LL3                                                                  &ug LL3 &ug LL3 &ug LL3 &ug LL3 &ug LL3
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___                                                  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
     &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
-    LBAT &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
+    LBAT    &ug ___ &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___  &ug ___ &ug ___ &ug ___         &ug ___ &ug ___ &ug ___ &ug ___ &ug ___
             >;
 
             layer-id = <LANGUAGE_ALT>;
